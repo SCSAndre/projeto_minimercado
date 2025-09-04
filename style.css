@@ -1,0 +1,39 @@
+/* Paleta de Cores Sugerida:
+   Verde Principal: #28a745 (um verde vibrante, bom para botões e destaques)
+   Cinza Escuro (Texto): #343a40
+   Branco: #FFFFFF
+   Fundo Claro: #f8f9fa (um cinza bem suave)
+*/
+
+/* Aplica a fonte Poppins ao corpo do site, com um fallback para fontes sans-serif */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Um fundo um pouco cinza para não cansar a vista */
+}
+
+/* Estilizando o cabeçalho com a cor principal */
+header {
+    background-color: #28a745; /* Nosso verde principal */
+    padding: 20px 0;
+    border-radius: 8px;
+    color: #FFFFFF; /* Cor do texto branca para contrastar com o fundo verde */
+}
+
+/* Deixando os links do menu brancos e mais visíveis */
+header .nav-link {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* Customizando os botões principais para usarem nossa cor verde */
+/* Isso sobrescreve as cores padrão do Bootstrap .btn-primary e .btn-success */
+.btn-primary, .btn-success {
+    background-color: #28a745;
+    border-color: #228b3a; /* Uma borda um pouco mais escura */
+}
+
+/* Efeito visual quando o mouse passa por cima dos botões */
+.btn-primary:hover, .btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
