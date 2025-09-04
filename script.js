@@ -1,19 +1,23 @@
-// O evento 'DOMContentLoaded' garante que nosso JavaScript só vai rodar
-// depois que toda a estrutura HTML da página estiver pronta.
 document.addEventListener('DOMContentLoaded', function() {
 
+    // --- LÓGICA DAS NOTIFICAÇÕES (TOAST) ---
+    // 1. Seleciona o elemento Toast do HTML.
+    const toastElement = document.getElementById('notificacaoToast');
+    // 2. Cria um objeto Toast do Bootstrap, que podemos controlar com JS.
+    const toast = new bootstrap.Toast(toastElement);
+    
     // --- MANIPULAÇÃO DO FORMULÁRIO DE CADASTRO ---
     const formCadastro = document.getElementById('form-cadastro');
 
     if (formCadastro) {
         formCadastro.addEventListener('submit', function(event) {
-            // Impede o comportamento padrão de recarregar a página
             event.preventDefault(); 
+            
+            // Define a mensagem do toast e o exibe
+            const toastBody = toastElement.querySelector('.toast-body');
+            toastBody.textContent = 'Cadastro realizado com sucesso! Em breve você receberá nossas novidades.';
+            toast.show();
 
-            // Mensagem de sucesso para o usuário
-            alert('Cadastro realizado com sucesso! Em breve você receberá nossas novidades.');
-
-            // Limpa os campos do formulário
             formCadastro.reset();
         });
     }
@@ -23,16 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (formAgendamento) {
         formAgendamento.addEventListener('submit', function(event) {
-            // Impede o recarregamento da página
             event.preventDefault();
 
             const dataAgendada = document.getElementById('inputData').value;
             const horaAgendada = document.getElementById('inputHorario').value;
 
-            // Mensagem de confirmação personalizada
-            alert(`Agendamento confirmado para o dia ${dataAgendada} às ${horaAgendada}. Obrigado!`);
+            // Define a mensagem personalizada do toast e o exibe
+            const toastBody = toastElement.querySelector('.toast-body');
+            toastBody.textContent = `Agendamento confirmado para o dia ${dataAgendada} às ${horaAgendada}. Obrigado!`;
+            toast.show();
 
-            // Limpa o formulário
             formAgendamento.reset();
         });
     }

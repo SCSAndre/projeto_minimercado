@@ -1,39 +1,72 @@
 /* Paleta de Cores Sugerida:
-   Verde Principal: #28a745 (um verde vibrante, bom para botões e destaques)
+   Verde Principal: #28a745
    Cinza Escuro (Texto): #343a40
    Branco: #FFFFFF
-   Fundo Claro: #f8f9fa (um cinza bem suave)
+   Fundo Claro: #f8f9fa
 */
 
-/* Aplica a fonte Poppins ao corpo do site, com um fallback para fontes sans-serif */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa; /* Um fundo um pouco cinza para não cansar a vista */
+    background-color: #f8f9fa; 
 }
 
-/* Estilizando o cabeçalho com a cor principal */
 header {
-    background-color: #28a745; /* Nosso verde principal */
+    background-color: #28a745; 
     padding: 20px 0;
     border-radius: 8px;
-    color: #FFFFFF; /* Cor do texto branca para contrastar com o fundo verde */
+    color: #FFFFFF;
 }
 
-/* Deixando os links do menu brancos e mais visíveis */
 header .nav-link {
     color: #FFFFFF;
     font-weight: bold;
 }
 
-/* Customizando os botões principais para usarem nossa cor verde */
-/* Isso sobrescreve as cores padrão do Bootstrap .btn-primary e .btn-success */
 .btn-primary, .btn-success {
     background-color: #28a745;
-    border-color: #228b3a; /* Uma borda um pouco mais escura */
+    border-color: #228b3a; 
 }
 
-/* Efeito visual quando o mouse passa por cima dos botões */
 .btn-primary:hover, .btn-success:hover {
     background-color: #218838;
     border-color: #1e7e34;
+}
+
+/* ================================================== */
+/* INÍCIO DAS NOVAS REGRAS DE ESTILO                  */
+/* ================================================== */
+
+/* MELHORIA 1: Sombras e efeitos nos cards */
+.card {
+    /* Adiciona uma sombra sutil */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Prepara o card para uma transição suave */
+    transition: all 0.3s ease-in-out;
+    border: none; /* Remove a borda padrão para um look mais limpo */
+}
+
+.card:hover {
+    /* Aumenta a sombra e "levanta" o card quando o mouse passa por cima */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+/* MELHORIA 2: Estilização do rodapé */
+footer {
+    background-color: #343a40; /* Cinza escuro */
+    color: #FFFFFF; /* Texto branco */
+    padding: 30px 0;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+/* Deixa os links do rodapé mais claros e sem sublinhado */
+footer a {
+    color: #a9c5b2; /* Um verde claro para combinar com o tema */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
 }
