@@ -61,19 +61,43 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ================================================== */
-/* INÍCIO DAS NOVAS MODIFICAÇÕES                      */
-/* ================================================== */
-
-/* MELHORIA 1: Centralizando o texto dos cards de produto */
-/* Esta regra afeta apenas os cards dentro da seção com id="produtos" */
+/* Centralizando o texto dos cards de produto */
 #produtos .card-body {
     text-align: center;
 }
 
-/* MELHORIA 2: Melhorando a legibilidade das legendas do carrossel */
+/* Melhorando a legibilidade das legendas do carrossel */
 .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto com 60% de transparência */
-    border-radius: 10px; /* Cantos arredondados para um visual mais suave */
-    padding: 1rem; /* Espaçamento interno para o texto não ficar colado nas bordas */
-}   
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 10px; 
+    padding: 1rem; 
+}
+
+/* ================================================== */
+/* INÍCIO DA NOVA MODIFICAÇÃO                         */
+/* ================================================== */
+
+/* MELHORIA 3: Visibilidade das setas do carrossel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px; /* Aumenta a largura da área clicável */
+    height: 50px; /* Aumenta a altura da área clicável */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para o centro */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo preto semitransparente */
+    border-radius: 50%; /* Transforma o fundo em um círculo */
+    opacity: 0.8; /* Deixa um pouco transparente */
+    transition: opacity 0.2s ease-in-out; /* Transição suave para o hover */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1; /* Fica totalmente opaco ao passar o mouse */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo um pouco mais escuro no hover */
+}
+
+/* Garante que os ícones dentro das setas sejam brancos e visíveis */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(0) invert(1); /* Deixa o ícone branco */
+}
