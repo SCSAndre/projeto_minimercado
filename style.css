@@ -60,3 +60,20 @@ footer a:hover {
     color: #FFFFFF;
     text-decoration: underline;
 }
+
+/* ================================================== */
+/* INÍCIO DAS NOVAS MODIFICAÇÕES                      */
+/* ================================================== */
+
+/* MELHORIA 1: Centralizando o texto dos cards de produto */
+/* Esta regra afeta apenas os cards dentro da seção com id="produtos" */
+#produtos .card-body {
+    text-align: center;
+}
+
+/* MELHORIA 2: Melhorando a legibilidade das legendas do carrossel */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto com 60% de transparência */
+    border-radius: 10px; /* Cantos arredondados para um visual mais suave */
+    padding: 1rem; /* Espaçamento interno para o texto não ficar colado nas bordas */
+}   
